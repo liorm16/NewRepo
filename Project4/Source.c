@@ -53,7 +53,8 @@ int main(int argc, char* argv[]) {
 	FILE *fGames = fopen(argv[2], "r");
 	FILE *fTable = fopen(argv[3], "w");
 	FILE* fResult = fopen("results.txt", "w");
-	team *head = NULL, *new_team = NULL;
+	team *t_head = NULL, *new_team = NULL;
+	player *p_head = NULL, *new_player = NULL;
 	char line[]="";
 	char name[] = "";
 	while (fgets(line, sizeof line, fTeams) != NULL) 
@@ -66,8 +67,8 @@ int main(int argc, char* argv[]) {
 			}
 		}
 		player *teamPlayers = NULL;
-		new_team = create_team(name,teamPlayers,0,0,0,0,head);
-		head = new_team;
+		new_team = create_team(name,teamPlayers,0,0,0,0,t_head);
+		t_head = new_team;
 	}
 	fclose(fTeams);
 
